@@ -1,9 +1,9 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Music, Calendar, User, MenuIcon, ArrowDown } from "lucide-react";
+import { Music, Calendar, User, MenuIcon, ArrowDown, ChevronRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Navigation from "@/components/Navigation";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -171,12 +171,166 @@ const HighlightSection = () => {
   );
 };
 
+const EventsPreview = () => {
+  const events = [
+    {
+      id: 1,
+      title: "Summer Heat",
+      date: "2024-07-15",
+      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
+      description: "Join us for a night of house music with international DJs.",
+    },
+    {
+      id: 2,
+      title: "Techno Night",
+      date: "2024-07-20",
+      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+      description: "Experience the best techno beats with our resident DJs.",
+    },
+  ];
+
+  return (
+    <div className="py-24 bg-club-dark relative overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center mb-12">
+          <h2 className="text-4xl font-display font-bold text-club-light">Upcoming Events</h2>
+          <Link to="/events" className="text-primary hover:text-primary/80 flex items-center">
+            View All <ChevronRight className="ml-1 w-4 h-4" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {events.map((event, index) => (
+            <motion.div
+              key={event.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="glass-morphism p-6 rounded-xl relative group"
+            >
+              <img 
+                src={event.image} 
+                alt={event.title} 
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h3 className="text-xl font-display font-bold text-club-light mb-2">{event.title}</h3>
+              <p className="text-club-muted mb-4">{event.description}</p>
+              <p className="text-primary">{new Date(event.date).toLocaleDateString()}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const VIPTablesPreview = () => {
+  const tables = [
+    {
+      id: 1,
+      name: "Silver Table",
+      image: "https://images.unsplash.com/photo-1543005390-6764f6a59a9b",
+      price: "$500",
+    },
+    {
+      id: 2,
+      name: "Gold Table",
+      image: "https://images.unsplash.com/photo-1536152427548-1112f62ee942",
+      price: "$1000",
+    },
+    {
+      id: 3,
+      name: "Platinum Table",
+      image: "https://images.unsplash.com/photo-1520256427405-5f9ead459812",
+      price: "$1500",
+    },
+  ];
+
+  return (
+    <div className="py-24 bg-club-black relative overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]" />
+      <div className="container mx-auto px-4 relative">
+        <div className="flex justify-between items-center mb-12">
+          <h2 className="text-4xl font-display font-bold text-club-light">VIP Tables</h2>
+          <Link to="/vip-tables" className="text-primary hover:text-primary/80 flex items-center">
+            View All <ChevronRight className="ml-1 w-4 h-4" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {tables.map((table, index) => (
+            <motion.div
+              key={table.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="glass-morphism p-6 rounded-xl relative group cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+            >
+              <img 
+                src={table.image} 
+                alt={table.name} 
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h3 className="text-xl font-display font-bold text-club-light mb-2">{table.name}</h3>
+              <p className="text-primary font-semibold">{table.price}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const GalleryPreview = () => {
+  const images = [
+    { id: 1, src: "https://images.unsplash.com/photo-1514525253161-7a46d19cd804" },
+    { id: 2, src: "https://images.unsplash.com/photo-1506039548639-b227b2bf4f1f" },
+    { id: 3, src: "https://images.unsplash.com/photo-1531259686061-f63451949261" },
+  ];
+
+  return (
+    <div className="py-24 bg-club-dark relative overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center mb-12">
+          <h2 className="text-4xl font-display font-bold text-club-light">Gallery</h2>
+          <Link to="/gallery" className="text-primary hover:text-primary/80 flex items-center">
+            View All <ChevronRight className="ml-1 w-4 h-4" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {images.map((image, index) => (
+            <motion.div
+              key={image.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              className="relative aspect-square overflow-hidden rounded-xl"
+            >
+              <img 
+                src={image.src} 
+                alt={`Gallery Image ${image.id}`} 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Index = () => {
   return (
     <div className="bg-club-black min-h-screen">
       <Navigation />
       <Hero />
       <Features />
+      <EventsPreview />
+      <VIPTablesPreview />
+      <GalleryPreview />
       <HighlightSection />
     </div>
   );
