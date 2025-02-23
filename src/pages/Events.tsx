@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -31,27 +30,33 @@ interface BookingFormData {
 const events = [
   {
     id: 1,
-    title: "Summer Heat",
+    title: "halloween  party",
     date: "2024-07-15",
     time: "22:00 - 04:00",
     location: "Main Hall",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
+    image: "/src/assets/event.jpg",
     description: "Join us for a night of house music with international DJs.",
     price: "$30",
   },
   {
     id: 2,
-    title: "Techno Night",
+    title: "white tee party",
     date: "2024-07-20",
     time: "23:00 - 05:00",
     location: "Underground Room",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+    image: "/src/assets/event2.jpg",
     description: "Experience the best techno beats with our resident DJs.",
     price: "$25",
   },
 ];
 
-const BookingModal = ({ event, onClose }: { event: Event; onClose: () => void }) => {
+const BookingModal = ({
+  event,
+  onClose,
+}: {
+  event: Event;
+  onClose: () => void;
+}) => {
   const [formData, setFormData] = useState<BookingFormData>({
     name: "",
     email: "",
@@ -89,7 +94,7 @@ const BookingModal = ({ event, onClose }: { event: Event; onClose: () => void })
         >
           <X className="h-4 w-4" />
         </Button>
-        
+
         <h2 className="text-2xl font-display font-bold text-club-light mb-6">
           Book for {event.title}
         </h2>
@@ -100,7 +105,9 @@ const BookingModal = ({ event, onClose }: { event: Event; onClose: () => void })
             <Input
               id="name"
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               required
               className="bg-club-dark/50 border-club-muted"
             />
@@ -112,7 +119,9 @@ const BookingModal = ({ event, onClose }: { event: Event; onClose: () => void })
               id="email"
               type="email"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               required
               className="bg-club-dark/50 border-club-muted"
             />
@@ -124,7 +133,9 @@ const BookingModal = ({ event, onClose }: { event: Event; onClose: () => void })
               id="phone"
               type="tel"
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, phone: e.target.value })
+              }
               required
               className="bg-club-dark/50 border-club-muted"
             />
@@ -138,14 +149,16 @@ const BookingModal = ({ event, onClose }: { event: Event; onClose: () => void })
               min="1"
               max="10"
               value={formData.numberOfTickets}
-              onChange={(e) => setFormData({ ...formData, numberOfTickets: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, numberOfTickets: e.target.value })
+              }
               required
               className="bg-club-dark/50 border-club-muted"
             />
           </div>
 
           <div className="pt-4">
-            <Button 
+            <Button
               type="submit"
               className="w-full neon-button border-primary text-primary hover:bg-primary"
             >
@@ -213,8 +226,10 @@ export default function Events() {
               </div>
               <p className="text-club-muted mb-4">{event.description}</p>
               <div className="flex items-center justify-between">
-                <span className="text-primary font-semibold">{event.price}</span>
-                <Button 
+                <span className="text-primary font-semibold">
+                  {event.price}
+                </span>
+                <Button
                   className="neon-button border-primary text-primary hover:bg-primary"
                   onClick={() => setSelectedEvent(event)}
                 >
@@ -225,11 +240,11 @@ export default function Events() {
           ))}
         </div>
       </div>
-      
+
       {selectedEvent && (
-        <BookingModal 
-          event={selectedEvent} 
-          onClose={() => setSelectedEvent(null)} 
+        <BookingModal
+          event={selectedEvent}
+          onClose={() => setSelectedEvent(null)}
         />
       )}
     </div>

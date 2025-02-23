@@ -6,12 +6,12 @@ import { useState } from "react";
 import { X } from "lucide-react";
 
 const images = [
-  { id: 1, src: "https://images.unsplash.com/photo-1514525253161-7a46d19cd804" },
-  { id: 2, src: "https://images.unsplash.com/photo-1506039548639-b227b2bf4f1f" },
-  { id: 3, src: "https://images.unsplash.com/photo-1531259686061-f63451949261" },
-  { id: 4, src: "https://images.unsplash.com/photo-1519162848935-544c3c6b3361" },
-  { id: 5, src: "https://images.unsplash.com/photo-1541424427479-38aa3f837579" },
-  { id: 6, src: "https://images.unsplash.com/photo-1541474377074-e5929c33491c" },
+  { id: 1, src: "/src/assets/gallery1.jpg" },
+  { id: 2, src: "/src/assets/gallery1.jpg" },
+  { id: 3, src: "/src/assets/gallery1.jpg" },
+  { id: 4, src: "/src/assets/gallery1.jpg" },
+  { id: 5, src: "/src/assets/gallery1.jpg" },
+  { id: 6, src: "/src/assets/gallery1.jpg" },
 ];
 
 export default function Gallery() {

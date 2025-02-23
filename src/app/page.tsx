@@ -1,7 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Music, Calendar, User } from "lucide-react";
+import {
+  Music,
+  Calendar,
+  User,
+  Instagram,
+  Facebook,
+  Twitter,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 
@@ -20,7 +27,7 @@ const Hero = () => (
       </video>
       <div className="absolute inset-0 bg-gradient-to-t from-club-black via-club-black/80 to-transparent" />
     </div>
-    
+
     <div className="relative z-10 container mx-auto px-4 text-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -35,10 +42,10 @@ const Hero = () => (
           Where music meets luxury. Join us for an unforgettable night.
         </p>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8">
-          <Button className="neon-button border-primary text-primary hover:bg-primary w-full md:w-auto">
+          <Button className="neon-button text-primary hover:bg-primary w-full md:w-auto">
             Book VIP Table
           </Button>
-          <Button variant="outline" className="w-full md:w-auto">
+          <Button className="neon-button border-primary text-primary hover:bg-primary w-full md:w-auto">
             View Events
           </Button>
         </div>
@@ -88,12 +95,30 @@ const Features = () => (
   </div>
 );
 
+const Footer = () => (
+  <footer className="bg-club-black text-center py-6 text-club-muted border-t border-club-muted/20">
+    <div className="flex justify-center gap-6 mb-4">
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <Instagram className="w-6 h-6 hover:text-primary transition" />
+      </a>
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <Facebook className="w-6 h-6 hover:text-primary transition" />
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <Twitter className="w-6 h-6 hover:text-primary transition" />
+      </a>
+    </div>
+    <p>&copy; {new Date().getFullYear()} Nightclub. All rights reserved.</p>
+  </footer>
+);
+
 export default function Home() {
   return (
     <div className="bg-club-black min-h-screen">
       <Navigation />
       <Hero />
       <Features />
+      <Footer />
     </div>
   );
 }

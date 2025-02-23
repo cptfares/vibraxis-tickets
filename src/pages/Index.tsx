@@ -1,10 +1,25 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Music, Calendar, User, MenuIcon, ArrowDown, ChevronRight } from "lucide-react";
+import {
+  Music,
+  Calendar,
+  User,
+  MenuIcon,
+  ArrowDown,
+  ChevronRight,
+} from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -26,7 +41,7 @@ const Hero = () => {
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-club-black via-club-black/80 to-transparent" />
       </div>
-      
+
       <motion.div
         style={{ opacity, scale }}
         className="relative z-10 container mx-auto px-4 text-center"
@@ -44,18 +59,12 @@ const Hero = () => {
             Where music meets luxury. Join us for an unforgettable night.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="neon-button border-primary text-primary hover:bg-primary w-full md:w-auto text-lg">
                 Book VIP Table
               </Button>
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button variant="outline" className="w-full md:w-auto text-lg">
                 View Events
               </Button>
@@ -85,13 +94,13 @@ const Features = () => {
   const features = [
     {
       icon: Music,
-      title: "World-Class DJs",
+      title: "World-Class music",
       description: "Experience sets from international artists",
       gradient: "from-[#FF1CF7] to-[#b249f8]",
     },
     {
       icon: Calendar,
-      title: "Regular Events",
+      title: "booming Events",
       description: "Weekly themed nights and special performances",
       gradient: "from-[#5EA2EF] to-[#0072F5]",
     },
@@ -118,7 +127,9 @@ const Features = () => {
               whileHover={{ scale: 1.05 }}
               className="glass-morphism p-6 rounded-xl text-center relative group"
             >
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br ${feature.gradient} rounded-xl transition-opacity duration-300`} />
+              <div
+                className={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br ${feature.gradient} rounded-xl transition-opacity duration-300`}
+              />
               <feature.icon className="w-12 h-12 mx-auto text-primary mb-4" />
               <h3 className="text-xl font-display font-bold mb-2 text-club-light">
                 {feature.title}
@@ -178,14 +189,14 @@ const EventsPreview = () => {
       id: 1,
       title: "Summer Heat",
       date: "2024-07-15",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
+      image: "/src/assets/event.jpg",
       description: "Join us for a night of house music with international DJs.",
     },
     {
       id: 2,
       title: "Techno Night",
       date: "2024-07-20",
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
+      image: "/src/assets/event2.jpg",
       description: "Experience the best techno beats with our resident DJs.",
     },
   ];
@@ -194,8 +205,13 @@ const EventsPreview = () => {
     <div className="py-24 bg-club-dark relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-club-light">Upcoming Events</h2>
-          <Link to="/events" className="text-primary hover:text-primary/80 flex items-center">
+          <h2 className="text-4xl font-display font-bold text-club-light">
+            Upcoming Events
+          </h2>
+          <Link
+            to="/events"
+            className="text-primary hover:text-primary/80 flex items-center"
+          >
             View All <ChevronRight className="ml-1 w-4 h-4" />
           </Link>
         </div>
@@ -207,23 +223,27 @@ const EventsPreview = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.02,
-                transition: { duration: 0.2 }
+                transition: { duration: 0.2 },
               }}
               className="glass-morphism p-6 rounded-xl relative group cursor-pointer"
             >
               <div className="relative overflow-hidden rounded-lg mb-4">
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                <img 
-                  src={event.image} 
-                  alt={event.title} 
+                <img
+                  src={event.image}
+                  alt={event.title}
                   className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-xl font-display font-bold text-club-light mb-2 group-hover:text-primary transition-colors">{event.title}</h3>
+              <h3 className="text-xl font-display font-bold text-club-light mb-2 group-hover:text-primary transition-colors">
+                {event.title}
+              </h3>
               <p className="text-club-muted mb-4">{event.description}</p>
-              <p className="text-primary">{new Date(event.date).toLocaleDateString()}</p>
+              <p className="text-primary">
+                {new Date(event.date).toLocaleDateString()}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -242,7 +262,7 @@ const ClubAtmosphere = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/club-night.mp4" type="video/mp4" />
+        <source src="src\assets\club-night.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-club-black/80 via-transparent to-club-black/80" />
       <div className="relative z-10 container mx-auto px-4 h-full flex items-center justify-center">
@@ -257,7 +277,8 @@ const ClubAtmosphere = () => {
             Experience The Night
           </h2>
           <p className="text-xl text-club-muted max-w-2xl mx-auto">
-            Immerse yourself in the ultimate nightlife experience with world-class sound and lighting.
+            Immerse yourself in the ultimate nightlife experience with
+            world-class sound and lighting.
           </p>
         </motion.div>
       </div>
@@ -270,19 +291,19 @@ const VIPTablesPreview = () => {
     {
       id: 1,
       name: "Silver Table",
-      image: "https://images.unsplash.com/photo-1543005390-6764f6a59a9b",
+      image: "/src/assets/viptable.png",
       price: "$500",
     },
     {
       id: 2,
       name: "Gold Table",
-      image: "https://images.unsplash.com/photo-1536152427548-1112f62ee942",
+      image: "/src/assets/viptable3.jpg",
       price: "$1000",
     },
     {
       id: 3,
       name: "Platinum Table",
-      image: "https://images.unsplash.com/photo-1520256427405-5f9ead459812",
+      image: "/src/assets/viptable4.jpg",
       price: "$1500",
     },
   ];
@@ -292,8 +313,13 @@ const VIPTablesPreview = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]" />
       <div className="container mx-auto px-4 relative">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-club-light">VIP Tables</h2>
-          <Link to="/vip-tables" className="text-primary hover:text-primary/80 flex items-center">
+          <h2 className="text-4xl font-display font-bold text-club-light">
+            VIP Tables
+          </h2>
+          <Link
+            to="/vip-tables"
+            className="text-primary hover:text-primary/80 flex items-center"
+          >
             View All <ChevronRight className="ml-1 w-4 h-4" />
           </Link>
         </div>
@@ -308,12 +334,14 @@ const VIPTablesPreview = () => {
               className="glass-morphism p-6 rounded-xl relative group cursor-pointer"
               whileHover={{ scale: 1.05 }}
             >
-              <img 
-                src={table.image} 
-                alt={table.name} 
+              <img
+                src={table.image}
+                alt={table.name}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-xl font-display font-bold text-club-light mb-2">{table.name}</h3>
+              <h3 className="text-xl font-display font-bold text-club-light mb-2">
+                {table.name}
+              </h3>
               <p className="text-primary font-semibold">{table.price}</p>
             </motion.div>
           ))}
@@ -325,17 +353,25 @@ const VIPTablesPreview = () => {
 
 const GalleryPreview = () => {
   const images = [
-    { id: 1, src: "https://images.unsplash.com/photo-1514525253161-7a46d19cd804" },
-    { id: 2, src: "https://images.unsplash.com/photo-1506039548639-b227b2bf4f1f" },
-    { id: 3, src: "https://images.unsplash.com/photo-1531259686061-f63451949261" },
+    { id: 1, src: "/src/assets/gallery1.jpg" },
+    { id: 2, src: "/src/assets/gallery2.jpg" },
+    { id: 3, src: "/src/assets/gallery3.jpg" },
+    { id: 4, src: "/src/assets/gallery4.jpg" },
+    { id: 5, src: "/src/assets/gallery1.jpg" },
+    { id: 6, src: "/src/assets/gallery1.jpg" },
   ];
 
   return (
     <div className="py-24 bg-club-dark relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-display font-bold text-club-light">Gallery</h2>
-          <Link to="/gallery" className="text-primary hover:text-primary/80 flex items-center">
+          <h2 className="text-4xl font-display font-bold text-club-light">
+            Gallery
+          </h2>
+          <Link
+            to="/gallery"
+            className="text-primary hover:text-primary/80 flex items-center"
+          >
             View All <ChevronRight className="ml-1 w-4 h-4" />
           </Link>
         </div>
@@ -350,9 +386,9 @@ const GalleryPreview = () => {
               whileHover={{ scale: 1.05 }}
               className="relative aspect-square overflow-hidden rounded-xl"
             >
-              <img 
-                src={image.src} 
-                alt={`Gallery Image ${image.id}`} 
+              <img
+                src={image.src}
+                alt={`Gallery Image ${image.id}`}
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -383,33 +419,50 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-display font-bold text-club-light">DA MOVE</h3>
+            <h3 className="text-2xl font-display font-bold text-club-light">
+              DA MOVE
+            </h3>
             <p className="text-club-muted">
-              Where music meets luxury. Experience unforgettable nights in the heart of the city.
+              Where music meets luxury. Experience unforgettable nights in the
+              heart of the city.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-display font-bold text-club-light">Quick Links</h4>
+            <h4 className="text-lg font-display font-bold text-club-light">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/events" className="text-club-muted hover:text-primary transition-colors">
+                <Link
+                  to="/events"
+                  className="text-club-muted hover:text-primary transition-colors"
+                >
                   Events
                 </Link>
               </li>
               <li>
-                <Link to="/vip-tables" className="text-club-muted hover:text-primary transition-colors">
+                <Link
+                  to="/vip-tables"
+                  className="text-club-muted hover:text-primary transition-colors"
+                >
                   VIP Tables
                 </Link>
               </li>
               <li>
-                <Link to="/gallery" className="text-club-muted hover:text-primary transition-colors">
+                <Link
+                  to="/gallery"
+                  className="text-club-muted hover:text-primary transition-colors"
+                >
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-club-muted hover:text-primary transition-colors">
+                <Link
+                  to="/contact"
+                  className="text-club-muted hover:text-primary transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -418,10 +471,15 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-lg font-display font-bold text-club-light">Contact Us</h4>
+            <h4 className="text-lg font-display font-bold text-club-light">
+              Contact Us
+            </h4>
             <ul className="space-y-4">
               {contactInfo.map((item, index) => (
-                <li key={index} className="flex items-center gap-2 text-club-muted">
+                <li
+                  key={index}
+                  className="flex items-center gap-2 text-club-muted"
+                >
                   <item.icon className="w-4 h-4 text-primary" />
                   <span>{item.text}</span>
                 </li>
@@ -431,7 +489,9 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-display font-bold text-club-light">Follow Us</h4>
+            <h4 className="text-lg font-display font-bold text-club-light">
+              Follow Us
+            </h4>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -449,7 +509,8 @@ const Footer = () => {
               ))}
             </div>
             <p className="text-club-muted text-sm">
-              Open Thursday to Sunday<br />
+              Open Thursday to Sunday
+              <br />
               10:00 PM - 4:00 AM
             </p>
           </div>
