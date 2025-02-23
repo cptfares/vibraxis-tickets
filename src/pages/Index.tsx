@@ -190,7 +190,7 @@ const EventsPreview = () => {
       title: "college party",
       date: "2024-07-15",
       image:
-        "https://github.com/cptfares/vibraxis-tickets/blob/main/src/assets/event.jpg",
+        "https://drive.google.com/drive/u/1/folders/1ezalGut6FdBusWVvCydVCz5FnsOAPatI",
       description: "Join us for a night of house music with international DJs.",
     },
     {
