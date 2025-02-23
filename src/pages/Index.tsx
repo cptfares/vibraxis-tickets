@@ -187,16 +187,18 @@ const EventsPreview = () => {
   const events = [
     {
       id: 1,
-      title: "Summer Heat",
+      title: "college party",
       date: "2024-07-15",
-      image: "/src/assets/event.jpg",
+      image:
+        "https://github.com/cptfares/vibraxis-tickets/blob/main/src/assets/event.jpg",
       description: "Join us for a night of house music with international DJs.",
     },
     {
       id: 2,
-      title: "Techno Night",
+      title: "white tee",
       date: "2024-07-20",
-      image: "/src/assets/event2.jpg",
+      image:
+        "https://github.com/cptfares/vibraxis-tickets/blob/main/src/assets/event2.jpg",
       description: "Experience the best techno beats with our resident DJs.",
     },
   ];
