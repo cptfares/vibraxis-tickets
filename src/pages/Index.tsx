@@ -189,7 +189,7 @@ const EventsPreview = () => {
       id: 1,
       title: "halloween party",
       date: "2024-07-15",
-      image: "public/event.jpg",
+      image: "/event.jpg",
       description: "Join us for a night of house music with international DJs.",
     },
     {
