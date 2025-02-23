@@ -187,18 +187,16 @@ const EventsPreview = () => {
   const events = [
     {
       id: 1,
-      title: "college party",
+      title: "halloween party",
       date: "2024-07-15",
-      image:
-        "https://drive.google.com/drive/u/1/folders/1ezalGut6FdBusWVvCydVCz5FnsOAPatI",
+      image: "public/event.jpg",
       description: "Join us for a night of house music with international DJs.",
     },
     {
       id: 2,
-      title: "white tee",
+      title: "white tee party",
       date: "2024-07-20",
-      image:
-        "https://github.com/cptfares/vibraxis-tickets/blob/main/src/assets/event2.jpg",
+      image: "/src/assets/event2.jpg",
       description: "Experience the best techno beats with our resident DJs.",
     },
   ];
@@ -359,8 +357,8 @@ const GalleryPreview = () => {
     { id: 2, src: "/src/assets/gallery2.jpg" },
     { id: 3, src: "/src/assets/gallery3.jpg" },
     { id: 4, src: "/src/assets/gallery4.jpg" },
-    { id: 5, src: "/src/assets/gallery1.jpg" },
-    { id: 6, src: "/src/assets/gallery1.jpg" },
+    { id: 5, src: "/src/assets/gallery5.jpg" },
+    { id: 6, src: "/src/assets/gallery6.jpg" },
   ];
 
   return (
