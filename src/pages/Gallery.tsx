@@ -6,12 +6,12 @@ import { useState } from "react";
 import { X } from "lucide-react";
 
 const images = [
-  { id: 1, src: "/src/assets/gallery1.jpg" },
-  { id: 2, src: "/src/assets/gallery2.jpg" },
-  { id: 3, src: "/src/assets/gallery3.jpg" },
-  { id: 4, src: "/src/assets/gallery4.jpg" },
-  { id: 5, src: "/src/assets/gallery5.jpg" },
-  { id: 6, src: "/src/assets/gallery6.jpg" },
+  { id: 1, src: "/gallery1.jpg" },
+  { id: 2, src: "/gallery2.jpg" },
+  { id: 3, src: "/gallery3.jpg" },
+  { id: 4, src: "/gallery4.jpg" },
+  { id: 5, src: "/gallery5.jpg" },
+  { id: 6, src: "/gallery6.jpg" },
 ];
 
 export default function Gallery() {

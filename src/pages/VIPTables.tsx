@@ -13,7 +13,7 @@ const VIPTables = () => {
       capacity: "Up to 6 guests",
       price: "$500",
       benefits: ["Priority entry", "Bottle service", "Dedicated server"],
-      image: "/src/assets/viptable.png",
+      image: "/viptable.png",
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const VIPTables = () => {
         "Dedicated server",
         "Mixer package",
       ],
-      image: "/src/assets/viptable3.jpg",
+      image: "/viptable3.jpg",
     },
     {
       id: 3,
@@ -40,7 +40,7 @@ const VIPTables = () => {
         "Mixer package",
         "Security escort",
       ],
-      image: "/src/assets/viptable4.jpg",
+      image: "/viptable4.jpg",
     },
   ];
 

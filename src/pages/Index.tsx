@@ -196,7 +196,7 @@ const EventsPreview = () => {
       id: 2,
       title: "white tee party",
       date: "2024-07-20",
-      image: "/src/assets/event2.jpg",
+      image: "/event2.jpg",
       description: "Experience the best techno beats with our resident DJs.",
     },
   ];
@@ -262,7 +262,7 @@ const ClubAtmosphere = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="src\assets\club-night.mp4" type="video/mp4" />
+        <source src="\club-night.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-club-black/80 via-transparent to-club-black/80" />
       <div className="relative z-10 container mx-auto px-4 h-full flex items-center justify-center">
@@ -291,19 +291,19 @@ const VIPTablesPreview = () => {
     {
       id: 1,
       name: "Silver Table",
-      image: "/src/assets/viptable.png",
+      image: "/viptable.png",
       price: "$500",
     },
     {
       id: 2,
       name: "Gold Table",
-      image: "/src/assets/viptable3.jpg",
+      image: "/viptable3.jpg",
       price: "$1000",
     },
     {
       id: 3,
       name: "Platinum Table",
-      image: "/src/assets/viptable4.jpg",
+      image: "/viptable4.jpg",
       price: "$1500",
     },
   ];
@@ -353,12 +353,12 @@ const VIPTablesPreview = () => {
 
 const GalleryPreview = () => {
   const images = [
-    { id: 1, src: "/src/assets/gallery1.jpg" },
-    { id: 2, src: "/src/assets/gallery2.jpg" },
-    { id: 3, src: "/src/assets/gallery3.jpg" },
-    { id: 4, src: "/src/assets/gallery4.jpg" },
-    { id: 5, src: "/src/assets/gallery5.jpg" },
-    { id: 6, src: "/src/assets/gallery6.jpg" },
+    { id: 1, src: "/gallery1.jpg" },
+    { id: 2, src: "/gallery2.jpg" },
+    { id: 3, src: "/gallery3.jpg" },
+    { id: 4, src: "/gallery4.jpg" },
+    { id: 5, src: "/gallery5.jpg" },
+    { id: 6, src: "/gallery6.jpg" },
   ];
 
   return (
