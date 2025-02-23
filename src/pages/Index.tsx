@@ -207,19 +207,59 @@ const EventsPreview = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="glass-morphism p-6 rounded-xl relative group"
+              whileHover={{ 
+                scale: 1.02,
+                transition: { duration: 0.2 }
+              }}
+              className="glass-morphism p-6 rounded-xl relative group cursor-pointer"
             >
-              <img 
-                src={event.image} 
-                alt={event.title} 
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-xl font-display font-bold text-club-light mb-2">{event.title}</h3>
+              <div className="relative overflow-hidden rounded-lg mb-4">
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+                <img 
+                  src={event.image} 
+                  alt={event.title} 
+                  className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-xl font-display font-bold text-club-light mb-2 group-hover:text-primary transition-colors">{event.title}</h3>
               <p className="text-club-muted mb-4">{event.description}</p>
               <p className="text-primary">{new Date(event.date).toLocaleDateString()}</p>
             </motion.div>
           ))}
         </div>
+      </div>
+    </div>
+  );
+};
+
+const ClubAtmosphere = () => {
+  return (
+    <div className="relative h-screen">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/club-night.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-b from-club-black/80 via-transparent to-club-black/80" />
+      <div className="relative z-10 container mx-auto px-4 h-full flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h2 className="text-4xl md:text-6xl font-display font-bold text-club-light mb-6">
+            Experience The Night
+          </h2>
+          <p className="text-xl text-club-muted max-w-2xl mx-auto">
+            Immerse yourself in the ultimate nightlife experience with world-class sound and lighting.
+          </p>
+        </motion.div>
       </div>
     </div>
   );
@@ -433,6 +473,7 @@ const Index = () => {
       <Hero />
       <Features />
       <EventsPreview />
+      <ClubAtmosphere />
       <VIPTablesPreview />
       <GalleryPreview />
       <HighlightSection />
