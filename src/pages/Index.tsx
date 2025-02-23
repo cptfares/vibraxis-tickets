@@ -4,6 +4,7 @@ import { Music, Calendar, User, MenuIcon, ArrowDown, ChevronRight } from "lucide
 import { motion, useScroll, useTransform } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
+import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -322,6 +323,109 @@ const GalleryPreview = () => {
   );
 };
 
+const Footer = () => {
+  const socialLinks = [
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Youtube, href: "#", label: "YouTube" },
+  ];
+
+  const contactInfo = [
+    { icon: Phone, text: "+1 (555) 123-4567" },
+    { icon: Mail, text: "info@damove.com" },
+    { icon: MapPin, text: "123 Club Street, Cityville" },
+  ];
+
+  return (
+    <footer className="bg-club-black border-t border-white/10">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand Section */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-display font-bold text-club-light">DA MOVE</h3>
+            <p className="text-club-muted">
+              Where music meets luxury. Experience unforgettable nights in the heart of the city.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-display font-bold text-club-light">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/events" className="text-club-muted hover:text-primary transition-colors">
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link to="/vip-tables" className="text-club-muted hover:text-primary transition-colors">
+                  VIP Tables
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="text-club-muted hover:text-primary transition-colors">
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-club-muted hover:text-primary transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-display font-bold text-club-light">Contact Us</h4>
+            <ul className="space-y-4">
+              {contactInfo.map((item, index) => (
+                <li key={index} className="flex items-center gap-2 text-club-muted">
+                  <item.icon className="w-4 h-4 text-primary" />
+                  <span>{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social Links */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-display font-bold text-club-light">Follow Us</h4>
+            <div className="flex gap-4">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-club-muted hover:text-primary hover:bg-white/10 transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </motion.a>
+              ))}
+            </div>
+            <p className="text-club-muted text-sm">
+              Open Thursday to Sunday<br />
+              10:00 PM - 4:00 AM
+            </p>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-white/10 text-center">
+          <p className="text-club-muted text-sm">
+            © {new Date().getFullYear()} DA MOVE. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
 const Index = () => {
   return (
     <div className="bg-club-black min-h-screen">
@@ -332,6 +436,7 @@ const Index = () => {
       <VIPTablesPreview />
       <GalleryPreview />
       <HighlightSection />
+      <Footer />
     </div>
   );
 };
