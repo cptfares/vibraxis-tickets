@@ -194,7 +194,7 @@ const EventsPreview = () => {
     },
     {
       id: 2,
-      title: "white tee party",
+      title: "Jersey Party",
       date: "2024-07-20",
       image: "/event2.jpg",
       description: "Experience the best techno beats with our resident DJs.",
@@ -402,7 +402,6 @@ const GalleryPreview = () => {
 const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Youtube, href: "#", label: "YouTube" },
   ];
@@ -519,7 +518,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
           <p className="text-club-muted text-sm">
-            © {new Date().getFullYear()} DA MOVE. All rights reserved.
+            © {new Date().getFullYear()} DAMOVE. All rights reserved.
           </p>
         </div>
       </div>

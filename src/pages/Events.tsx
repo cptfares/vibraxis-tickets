@@ -40,7 +40,7 @@ const events = [
   },
   {
     id: 2,
-    title: "white tee party",
+    title: "Jersey Party",
     date: "2024-07-20",
     time: "23:00 - 05:00",
     location: "Underground Room",
